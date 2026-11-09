@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validar aplicación
+    uses: paideia-code/paideia-infra-automations/.github/workflows/ci-node-npm.yml@v0.1.0
+    with:
+      working-directory: '.'
+      run-integration-tests: true
