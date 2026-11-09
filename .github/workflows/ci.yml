@@ -17,7 +17,7 @@ permissions:
 jobs:
   validate:
     name: Validar aplicación
-    uses: paideia-code/paideia-infra-automations/.github/workflows/ci-node-npm.yml@v0.1.0
+    uses: paideia-code/paideia-infra-automations/.github/workflows/ci-node-npm.yml@v0.2.0
     with:
       working-directory: '.'
       run-integration-tests: true
