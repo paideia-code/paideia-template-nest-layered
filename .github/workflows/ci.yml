@@ -19,14 +19,11 @@ jobs:
     name: Validar aplicación
     uses: paideia-code/paideia-infra-automations/.github/workflows/ci-node-npm.yml@v0.2.0
     with:
-      working-directory: '.'
       run-integration-tests: true
+
   build-image:
     name: Construir imagen
     needs: validate
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
-    uses: paideia-code/paideia-infra-automations/.github/workflows/build-image-docker.yml@v0.3.0
-    with:
-      context: '.'
-      dockerfile: 'Dockerfile'
-      image-name: paideia-template-nest-layered
+    uses: paideia-code/paideia-infra-automations/.github/workflows/build-image-docker.yml@v0.5.0
+    secrets: inherit
