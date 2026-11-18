@@ -37,6 +37,6 @@ jobs:
     permissions:
       contents: read
       packages: write
-    uses: paideia-code/paideia-infra-automations/.github/workflows/docker-build-publish-ghcr.yml@v1.0.0-rc.1
+    uses: paideia-code/paideia-infra-automations/.github/workflows/docker-build-publish-ghcr.yml@v1.0.0
     with:
       version: ${{ github.ref_name }}
